@@ -1,0 +1,28 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="left detail">
+    <h2>{{ news.title }}</h2>
+    <div class="bottom"><p>Опубликовано: <time>{{ news.date }}</time></p></div>
+    <div class="swiper swiper1">
+      <div class="left_event left"><img src="{% static 'img/left.png' %}" alt=""></div>
+      <div class="content_swiper">
+        <img src="{{ news.short_image.url }}" alt="">
+        {% for img in images %}
+          {% if img.category_news == news %}
+            <img src="{{ img.image.url }}" alt="">
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="right_event right"><img src="{% static 'img/right.png' %}" alt=""></div>
+    </div>
+    <pre>{{ news.text }}</pre>
+  </div>
+  <script src="{% static 'js/swiper.js' %}"></script>
+  <script>
+    window.onload = function() {
+      new_swiper(document.querySelector(".swiper1"))
+    }
+  </script>
+{% endblock %}

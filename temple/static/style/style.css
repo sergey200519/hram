@@ -1,0 +1,752 @@
+:root {
+  --section-padding: 15px 70px;
+  --section-margin: 0 0 60px 0;
+  --title_page-margin: 60px 0 40px 0;
+  --wrapper-padding: 0 15px;
+  --container-max-width: 1100px;
+  --conteiner-background: #EEE6F9;
+  --main_p-margin: 0 0 20px 0;
+  --background-img: url(../img/bac.jpg);
+  --main-color-for-text: black;
+  --header_section-color: #167ce2;
+  --section_useful_ul_a-for-useful: #178ac4;
+  --tel_a-color: #006bcd;
+}
+/* reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  transition: .5s all;
+}
+input,
+textarea,
+button {
+  font-size: inherit;
+}
+li {
+  list-style-type: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  width: 100%;
+}
+
+/* постояные правила */
+html {
+  overflow-x: hidden;
+}
+section {
+  padding: var(--section-padding);
+  margin: var(--section-margin);
+}
+.title_page {
+  margin: var(--title_page-margin);
+}
+body {
+  background-image: var(--background-img);
+  color: var(--main-color-for-text);
+}
+.wrapper {
+  padding: var(--wrapper-padding);
+}
+.conteiner {
+  display: block;
+  margin: 0 auto;
+  max-width: var(--container-max-width); /* я здесь не уверен нужны ли здесь переменые */
+  background: var(--conteiner-background);
+}
+p,
+pre {
+  line-height: 25px;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+pre {
+  padding: 20px 15px;
+  margin-top: 50px;
+  white-space: pre-wrap;
+}
+button {
+  padding: 10px 20px;
+  margin: 25px 20px 10px 0;
+  border: 1px #4d4d4d solid;
+  background: #e1e1e1;
+  box-shadow: 1px 1px 5px;
+  color: #4d4d4d;
+}
+button:focus, button:hover {
+  background: #fff;
+  border: 1px #fff solid;
+  cursor: pointer;
+}
+.conteiner_left_aside {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.left {
+  width: 70%;
+}
+.aside {
+  width: 25%;
+}
+.aside section {
+  padding: 25px 8px;
+  position: sticky;
+  top: 0;
+}
+.aside section .aside_card {
+  width: 100%;
+  margin-bottom: 25px;
+}
+.aside section .aside_card img {
+  width: 100%;
+}
+h2 {
+  display: block;
+  margin: 25px 0 20px 0;
+}
+h3 {
+  display: block;
+  margin: 15px 0 10px 0;
+}
+.mini_navigation_on_pages {
+  margin-bottom: 15px;
+}
+.mini_navigation_on_pages li a {
+  display: inline-block;
+  padding: 8px 0;
+  color: var(--section_useful_ul_a-for-useful);
+  transition: 0.7s;
+}
+.mini_navigation_on_pages li a:hover {
+  text-decoration: underline;
+  padding: 30px 0;
+}
+.section_in_group_useful img {
+  width: 40%;
+  margin: 30px auto;
+  display: block;
+}
+.section_in_group_useful h2 {
+  margin: 30px 0 10px 0;
+  font-size: 19px;
+  font-weight: bold;
+}
+.swiper {
+  height: 635px;
+}
+time {
+  color: #178ac4;
+}
+
+
+/* header */
+.header_section {
+  position: relative;
+  margin-top: 40px;
+  padding-top: 60px;
+  color: var(--header_section-color);
+}
+.header_section h1 {
+  color: var(--header_section-color);
+}
+.mobail_menu {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+}
+.header_section a {
+  color: #167ce2;
+}
+.header_section p {
+  margin-top: 5px;
+}
+.main_img {
+  width: 100%;
+}
+.nav_section {
+  background: linear-gradient(#252525, #0a0a0a);
+  padding: 0;
+  margin: -4px 0 0 0;
+}
+
+
+/* nav */
+.navigation {
+  padding: 0 70px;
+  color: #e7dff4;
+}
+.navigation ul {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: center;
+}
+.navigation ul li {
+  position: relative;
+}
+.nav_a_active {
+  text-decoration: underline;
+}
+.navigation ul li a {
+  display: block;
+  padding: 10px 20px;
+}
+.navigation ul li a:hover, .navigation ul li a:focus {
+  background: #fff;
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+}
+.nav_list ul {
+  position: absolute;
+  top: 39px;
+  left: 1000000px;
+  width: auto;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: linear-gradient(#0a0a0a, #252525);
+  opacity: 0;
+  z-index: 1;
+  transition: .001s;
+}
+.nav_list ul a {
+  color: #e7dff4;
+}
+.nav_ul_drop li {
+  padding: 0 !important;
+}
+.nav_ul_drop li a {
+  padding: 10px 20px;
+  display: block;
+  width: 100%;
+}
+.nav_ul_drop li a:hover {
+  cursor: pointer;
+  color: black;
+}
+.nav_list:hover .nav_ul_drop {
+  opacity: 1;
+  left: 0;
+}
+
+
+/* главная */
+.main_section {
+  margin: 0;
+}
+.main_section p {
+  margin: var(--main_p-margin);
+}
+
+
+/* footer */
+.social_network {
+  margin-top: 10px;
+  width: 100px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.social_network a {
+  width: 30%;
+}
+.social_network a img {
+  width: 100%;
+}
+
+
+/* свайтер - слайдер */
+html,
+body {
+ position: relative;
+ height: 100%;
+}
+.swiper-container {
+ width: 100%;
+ height: 300px;
+ margin-left: auto;
+ margin-right: auto;
+}
+.swiper-slide {
+ height: 500px;
+ background-size: contain;
+ background-position: center;
+ background-repeat: no-repeat;
+}
+.gallery-top {
+ height: 80%;
+ width: 100%;
+}
+.gallery-thumbs {
+ height: 20%;
+ box-sizing: border-box;
+ padding: 10px 0;
+}
+.gallery-thumbs .swiper-slide {
+ width: 25%;
+ height: 115px;
+ opacity: 0.4;
+ background-size: cover;
+}
+.gallery-thumbs .swiper-slide-thumb-active {
+ opacity: 1;
+}
+
+
+/* новости */
+.news_conteiner {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.news_left {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+.news_box {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+.news_box h1 {
+  margin-left: 55px;
+}
+.news_aside {
+  width: 25%;
+}
+.post_hram {
+  margin: 0;
+}
+.post_hram time {
+  color: #178ac4;
+}
+.post_hram p {
+  margin-bottom: 18px;
+}
+.post_hram_box_for_img_df1 {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.post_hram_box_for_img_df1 img {
+  width: 45%;
+}
+.news_aside section {
+  padding: 25px 8px;
+  position: sticky;
+  top: 0;
+}
+.news_aside section .news_right_card {
+  width: 100%;
+  margin-bottom: 25px;
+}
+.news_aside section .news_right_card img {
+  width: 100%;
+}
+.short_new {
+  height: 200px;
+  margin-bottom: 0;
+}
+.short_new:hover {
+  background: rgba(0, 0, 0, 0.10);
+}
+.short_new .short_new_left {
+  width: 25%;
+  margin-right: 15px;
+}
+.short_new .short_new_right {
+  width: 100%;
+}
+.short_new a,
+.short_new .short_new_left,
+.short_new .short_new_right,
+.short_new img {
+  height: 100%;
+}
+.short_new a {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.short_new img {
+  height: 100%;
+  object-fit: contain;
+  margin-right: 15px;
+}
+.short_new .short_new_right {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+}
+.short_new .short_new_right .top {
+  overflow: hidden;
+}
+.detail h2 {
+  text-align: center;
+  padding: 10px 15px 30px 15px;
+}
+.detail p {
+  font-size: 18px;
+  padding: 20px 15px;
+}
+.detail .swiper {
+  padding: 0 15px;
+}
+.swiper > .left {
+  left: 15px;
+}
+.swiper > .right {
+  right: 15px;
+}
+.pagination {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 20px;
+  align-items: center;
+}
+.pagination .pg_left,
+.pagination .pg_right {
+  width: 25%;
+  height: 30px;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  justify-content: space-between;
+}
+.pagination img {
+  height: 100%;
+  width: auto;
+}
+.pagination .pg_number ul {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  gap: 20px;
+}
+.pagination .pg_number ul li {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: white;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+.pagination .pg_number ul li a {
+  margin: auto;
+}
+
+
+/* расписание богослужений */
+/* .schedule_h1 {
+  text-align: center;
+} */
+.schedule_form {
+  width: 100%;
+  margin-top: 30px;
+  padding: 20px 15px;
+}
+.schedule_form p {
+  margin-bottom: 35px;
+}
+.schedule_form textarea,
+.schedule_form input {
+  border: 0;
+  padding: 15px 10px;
+  resize: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.schedule_form textarea {
+  height: 100px;
+}
+.popup_schedule {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup_schedule:target {
+  opacity: 1;
+  visibility: visible;
+}
+.popup_contant {
+  background: #fff;
+  padding: 30px;
+  font-size: 20px;
+  position: relative;
+}
+.popup_contant a {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+.close_area_schedule_in_popup {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.time_table_box {
+  width: 100%;
+  display: block;
+}
+.time_table {
+  display: block;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+tbody {
+  display: block;
+  width: 100%;
+}
+.time_table p {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.time_table tr {
+  display: flex;
+  width: 100%;
+}
+.time_table .time_table_text {
+  width: 100%;
+  display: block;
+}
+.time_table .time_table_width_auto {
+  width: auto;
+}
+.time_table tr td {
+  padding: 5px 8px;
+}
+.time_table tr:hover {
+  background: rgba(0, 0, 0, 0.10);
+  cursor: pointer;
+}
+.time_table .time_table_holiday {
+  color: #ee5045;
+}
+.time_table .person {
+  text-align: center;
+  color: black;
+}
+.time_table .time_table_date {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  white-space: nowrap;
+  width: 200px !important;
+}
+.time_table .time_table_time {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+}
+.time_table .time_table_date p,
+.time_table .time_table_time p {
+  margin: auto;
+}
+
+/* о святом */
+.section_about_holy p {
+  margin-bottom: 20px;
+}
+.section_about_holy hr {
+  margin: 30px 0;
+}
+.section_about_holy h3 {
+  margin: 35px 0 15px 0;
+}
+.section_about_holy_img {
+  width: 50%;
+  display: block;
+  margin: 25px auto;
+}
+.section_about_holy_img_float {
+  width: 30%;
+  float: left;
+  margin: 0 15px 10px 0;
+}
+
+
+
+/* Помощь храму */
+.section_help_main_img {
+  width: 60%;
+  display: block;
+  margin: 20px auto;
+}
+.section_help h2 {
+  display: block;
+  margin: 15px 0 10px 0;
+}
+.section_help h3 {
+  display: block;
+  margin: 10px 0 8px 0;
+}
+
+
+/* Полезное */
+.section_useful ul a {
+  display: inline-block;
+  color: var(--section_useful_ul_a-for-useful);
+  margin-bottom: 8px;
+}
+.section_useful h2 {
+  display: block;
+  margin: 15px 0 10px 0;
+}
+.section_useful h3 {
+  margin: 10px 0 8px 0;
+}
+
+
+/* контакты */
+.tel a {
+  color: var(--tel_a-color);
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  cursor: pointer;
+}
+details a {
+  color: var(--tel_a-color);
+}
+.questions {
+  display: none;
+}
+
+@media (max-width: 1100px) {
+  .wrapper {
+    padding: 0;
+  }
+  .header_section {
+    margin-top: 0;
+  }
+
+
+  /* nav */
+  .navigation {
+    padding: 0 30px;
+  }
+}
+@media (max-width: 1000px) {
+  /* nav */
+  .navigation {
+    padding: 0 10px;
+  }
+  .navigation ul {
+    justify-content: space-between;
+  }
+  .navigation a {
+    font-size: 15px;
+  }
+}
+@media (max-width: 915px) {
+  .navigation {
+    display: block;
+  }
+  .navigation ul li a {
+    padding: 8px 12px;
+  }
+}
+@media (max-width: 815px) {
+  /* header */
+  .mobail_menu {
+    display: block;
+  }
+
+
+  /* nav */
+  .navigation {
+    display: none;
+  }
+  .navigation ul {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .navigation li {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+  .navigation ul li:hover, .navigation ul li:focus {
+    background: #fff;
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+  }
+  .navigation li a {
+    margin: 0 auto;
+    font-size: 16px;
+  }
+}
+@media (max-width: 650px) {
+  /* постояные правила */
+  .conteiner_left_aside {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .left,
+  .aside {
+    width: 100%;
+    padding: var(--section-padding);
+  }
+  .post_hram {
+    padding: 0;
+  }
+  :root {
+    --section-padding: 15px 30px;
+  }
+  .section_in_group_useful img {
+    width: 80%;
+  }
+}

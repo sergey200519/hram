@@ -1,0 +1,30 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="news_box left">
+    <div class="pagination">
+      <div class="pg_left">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">← Первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}"><img src="{% static "img/pg_left.png" %}" alt=""></a>
+        {% endif %}
+      </div>
+      <div class="pg_number">
+        <ul>
+          {% for page in page_obj.paginator.page_range %}
+             <li class=""><a href="?page={{ page }}">{{ page }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="pg_right">
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}"><img src="{% static "img/pg_right.png" %}" alt=""></a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">последняя →</a>
+        {% endif %}
+      </div>
+    </div>
+    {% include 'mainapp/new.html' %}
+    <h1 class="title_page">{{ title }}</h1>
+  </div>
+{% endblock %}

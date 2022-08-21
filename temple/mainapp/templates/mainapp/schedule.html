@@ -1,0 +1,39 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+  <div class="left">
+    <section class="post_hram">
+      <h1 class="title_page schedule_h1">Расписание богослужения на {{ month }}</h1>
+      <div class="time_table_box">
+        <table class="time_table">
+          {% for item in timetable %}
+            <tr>
+              {% if item.holiday == 'Y' %}
+                <td class="time_table_width_auto time_table_holiday time_table_date"><p>{{ item.date }}</p></td>
+                <td class="time_table_text time_table_holiday">
+                  <p>{{ item.description }}</p>
+                  {% if item.person != null %}
+                    <br>
+                    <p class="person">{{ item.person }}</p>
+                  {% endif %}
+
+                </td>
+              {% else %}
+                <td class="time_table_width_auto time_table_date"><p>{{ item.date }}</p></td>
+                <td class="time_table_text">
+                  <p>{{ item.description }}</p>
+                  {% if item.person != null %}
+                    <br>
+                    <p class="person">{{ item.person }}</p>
+                  {% endif %}
+
+                </td>
+              {% endif %}
+              <td class="time_table_width_auto time_table_time"><p>{{ item.time }}</p></td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </section>
+  </div>
+{% endblock %}

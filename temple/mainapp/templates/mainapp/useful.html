@@ -1,0 +1,46 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+<div class="left">
+  <section class="section_useful">
+    <h1 class="title_page">Полезное</h1>
+    <ul class="section_useful_ul">
+      <li><a href="{% url 'mainapp:about_post' %}">O посте</a></li>
+      <li><a href="{% url 'mainapp:christmas_post' %}">Рождественский пост</a></li>
+      <li><a href="{% url 'mainapp:post' %}">Постимся постом приятным</a></li>
+      <li><a href="{% url 'mainapp:about_burial' %}">Отпевания</a></li>
+      <li><a href="{% url 'mainapp:about_death' %}">О смерти, погребении и поминовении усопших</a></li>
+      <li><a href="{% url 'mainapp:god' %}">У Бога все живы</a></li>
+      <li><a href="{% url 'mainapp:commemoration_of_he_dead' %}">Поминовение усопших</a></li>
+      <li><a href="{% url 'mainapp:prayers_for_the_dead' %}">Молитвы о усопших</a></li>
+    </ul>
+    <h2>Общецерковные Интернет-ресурсы</h2>
+    <ul>
+      <li><a href="http://www.spblago.ru/">www.spblago.ru</a> — Официальный сайт Сергиево-Посадского Благочиния</li>
+      <li><a href="http://elijah.ru/">elijah.ru</a> — Официальный сайт Ильинского храма г. Сергиев Посад</li>
+      <li><a href="http://www.patriarchia.ru/">www.patriarchia.ru</a> — Официальный сайт Московского Патриархата</li>
+      <li><a href="http://pravoslavie.ru/">pravoslavie.ru</a>— Православие.ру</li>
+      <li><a href="http://days.pravoslavie.ru/">days.pravoslavie.ru</a>-Православный церковный каледарь</li>
+      <li><a href="http://mospat.ru/">mospat.ru</a>— Отдел внешних церковных связей Московского Патриархата</li>
+      <li><a href="http://sinfo-mp.ru/">sinfo-mp.ru</a>— Синодальный информационный отдел</li>
+      <li><a href="http://anastasia-uz.ru/">anastasia-uz.ru</a>— Отдел по тюремному служению Московского Патриархата</li>
+      <li><a href="http://pravmir.ru/">pravmir.ru</a>— Православие и мир</li>
+      <li><a href="http://religare.ru/">religare.ru</a>— Религиозный медиа ресурс</li>
+      <li><a href="http://www.sedmitza.ru/">sedmitza.ru</a>— Церковно-научный центр «Православная энциклопедия»</li>
+      <li><a href="http://www.miloserdie.ru/">miloserdie.ru</a>— Правосланый портал о благотворительности и социальной деятельности</li>
+      <li><a href="http://tv-soyuz.ru/">tv-soyuz.ru</a>— Православный телеканал «Союз»</li>
+      <li><a href="http://hristianstvo.ru/">hristianstvo.ru</a>— Каталог православных ресурсов в сети Интернет</li>
+      <li><a href="http://orthomedia.ru/">orthomedia.ru</a>— Аудио и видео библиотека</li>
+      <li><a href="http://azbyka.ru/">azbyka.ru</a>— Православное общество «Азбука веры»</li>
+      <li><a href="http://drevo.pravbeseda.ru/">drevo.pravbeseda.ru</a>— Открытая православная энциклопедия «Древо»</li>
+      <li><a href="http://www.pravenc.ru/" >pravenc.ru</a>— Православная энциклопедия</li>
+      <li><a href="http://pravkonkurs.ru/" >pravkonkurs.ru</a>— Грантовый конкурс «Православная инициатива»</li>
+      <li><a href="http://web.priestt.com/" >web.priestt.com</a>— Каталог православных ресурсов</li>
+      <li><a href="http://predanie.ru/">predanie.ru</a>— Православный портал</li>
+      <li><a href="http://kliros.ru/" >kliros.ru</a>— Информационный портал для регентов, певчих и любителей церковного пения</li>
+      <li><a href="http://cerkov.ru/" >cerkov.ru</a>— Каталог православных сайтов</li>
+      <li><a href="http://svetoch-opk.ru/">svetoch-opk.ru</a>— Основы православной веры в презентациях</li>
+    </ul>
+  </section>
+</div>
+{% endblock %}

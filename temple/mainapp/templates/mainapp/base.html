@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Лазаревский храм - {{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'style/swiper.css' %}">
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.jpg' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="conteiner">
+          <section class="header_section">
+            <div class="mobail_menu"><img src="{% static 'img/open-menu.svg' %}" id="mobile-menu-btn" alt=""></div>
+            <a href="{% url 'index' %}">
+              <h1>Лазаревский храм</h1></a>
+            <p>Сайт Лазаревского храма Сергиево-Посадского благочиния</p>
+          </section>
+          <img class="main_img" src="{% static 'img/main.jpg' %}" alt="">
+          <section class="nav_section">
+            <nav class="navigation">
+              <ul>
+                <li><a href="{% url 'index' %}">Главная</a></li>
+                <li><a href="{% url 'mainapp:news' %}">Новости</a></li>
+                <li><a href="{% url 'mainapp:schedule' %}">Расписание богослужений</a></li>
+                <li><a href="{% url 'mainapp:about_holy' %}">О святом</a></li>
+                <li><a href="{% url 'mainapp:help' %}">Помощь храму</a></li>
+                <li class="nav_list"><a href="{% url 'mainapp:useful' %}" class="nav_list_a">Полезное</a>
+                  <ul class="nav_ul_drop">
+                    <li><a href="{% url 'mainapp:about_post' %}">O посте</a></li>
+                    <li><a href="{% url 'mainapp:christmas_post' %}">Рождественский пост</a></li>
+                    <li><a href="{% url 'mainapp:post' %}">Постимся постом приятным</a></li>
+                    <li><a href="{% url 'mainapp:about_burial' %}">Отпевания</a></li>
+                    <li><a href="{% url 'mainapp:about_death' %}">О смерти, погребении и поминовении усопших</a></li>
+                    <li><a href="{% url 'mainapp:god' %}">У Бога все живы</a></li>
+                    <li><a href="{% url 'mainapp:commemoration_of_he_dead' %}">Поминовение усопших</a></li>
+                    <li><a href="{% url 'mainapp:prayers_for_the_dead' %}">Молитвы о усопших</a></li>
+                  </ul>
+                </li>
+                <li><a href="{% url 'mainapp:contact' %}">Контакты</a></li>
+              </ul>
+            </nav>
+          </section>
+        </div>
+      </header>
+      <div class="content">
+        <div class="conteiner conteiner_left_aside">
+          {% block content %}
+          {% endblock %}
+          <div class="aside">
+            <section>
+              <div class="news_right_card"><a href="http://sohranihram.ru/"><img src="{% static 'img/fond_uvinalia.jpg' %}" alt=""></a></div>
+              <div class="news_right_card"><p>ХРАМ ОСТРО НУЖДАЕТСЯ В ВАШЕЙ ПОМОЩИ</p><button><a href="{% url 'mainapp:help' %}">я хочу помочь храму</a></button></div>
+              <div class="news_right_card"><a href="http://www.spblago.ru/"><img src="{% static 'img/blag.jpg' %}" alt=""></a></div>
+              <br>
+              <br>
+              <br>
+              <div class="news_right_card"><script language="Javascript" src="https://script.pravoslavie.ru/calendar.php"></script></div>
+            </section>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="conteiner">
+          <hr>
+          <section class="footer_section">
+            <p>поделиться в соц. сетях</p>
+            <div class="social_network">
+              <a href="https://vk.com"><img src="{% static 'img/vk.png' %}" alt=""></a>
+              <a href="#"><img src="{% static 'img/whatsapp.png' %}" alt=""></a>
+              <a href="https://facebook.com"><img src="{% static 'img/facebook.png' %}" alt=""></a>
+            </div>
+          </section>
+        </div>
+      </footer>
+    </div>
+    <script>
+      $(document).ready(function() {
+
+        $('#mobile-menu-btn').on('click', function() {
+          $('.navigation').slideToggle(500);
+        });
+
+      });
+    </script>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

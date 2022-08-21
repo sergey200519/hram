@@ -1,0 +1,48 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+
+{% block content %}
+  <div class="left">
+    <section class="section_contact">
+      <h1 class="title_page">Контакты</h1>
+      <p>{{ settings.abbot }}</p>
+      <p>Адрес: Московская обл., Сергиево-Посадский р-н, с. Благовещение (Новое кладбище)</p>
+      <p>электронная почта: {{ settings.email }}</p>
+      <p class="tel">Тел.: <a href="tel:{{ phone_html }}">{{ settings.phone }}</a></p>
+      <p>Проезд: От Уточьей Башни Троице-Сергиевой Лавры поезжайте по дороге вниз-вверх — на Благовещенское Кладбище (4-5 км). Церковь находится не доезжая до него и хорошо видна с дороги. От церкви Петра и Павла в Сергиевом Посаде на кладбище ходит
+        автобус №10.</p>
+      <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A935b633cb6fd2960d40c38b8ab1961dfea0a66ad74318fbd50698d4073d340bf&amp;source=constructor" width="100%" height="720" frameborder="0"></iframe></div>
+      <!-- <form id="schedule_form_id" class="schedule_form" action="index.html" method="post">
+        <h2>Написать коментарий</h2>
+        <p>Ваш E-mail не будет опубликован</p>
+        <textarea name="name" placeholder="коментарий" required></textarea>
+        <input type="text" placeholder="имя" required>
+        <input type="text" placeholder="E-mail" required>
+        <button type="button" name="button"><a href="#popup_schedule">Отправить сообщение</a></button>
+      </form> -->
+      <h2>Часто задоваемые вопросы</h2>
+      <details>
+        <summary>
+          <h3>когда начинаеться служба?</h3>
+        </summary>
+        <p>Это указыно на сайте вот ссылка <a href="schedule.html">Расписание</a>.</p>
+      </details>
+      <details>
+        <summary>
+          <h3>как добраться до храма?</h3>
+        </summary>
+        <p>От Уточьей Башни Троице-Сергиевой Лавры поезжайте по дороге вниз-вверх — на Благовещенское Кладбище (4-5 км). Церковь находится не доезжая до него и хорошо видна с дороги. От церкви Петра и Павла в Сергиевом Посаде на кладбище ходит автобус
+          №10.</p>
+      </details>
+      <details>
+        <summary>
+          <h3>есть ли служба в двунодисятые праздники</h3>
+        </summary>
+        <p>да есть. об этом оповещают заание на сайте вот ссылка <a href="schedule.html">Расписание</a>.</p>
+      </details>
+      <!-- <h2>3D модель храма</h2>
+      <div class="3d"><iframe id="5afb55c9-e388-48a4-8feb-e479e7bc9a52" src="https://www.vectary.com/viewer/v1/?model=5afb55c9-e388-48a4-8feb-e479e7bc9a52&env=kiara9dusk" frameborder="0" width="100%" height="480"></iframe></div> -->
+    </section>
+  </div>
+{% endblock %}

@@ -1,0 +1,14 @@
+* {
+  transition: 0s all;
+}
+:root {
+  --conteiner-background: #67646a;
+  --background-img: url(../img/dark-bac.jpg);
+  --main-color-for-text: white;
+  --header_section-color: #00abff;
+  --section_useful_ul_a-for-useful: #00abff;
+  --tel_a-color: #00abff;
+}
+* {
+  transition: .5s all;
+}

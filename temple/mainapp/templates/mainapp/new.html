@@ -1,0 +1,13 @@
+{% for new in news %}
+  <section class="short_new">
+    <a href="{% url 'mainapp:detail' new.id %}" class="short_new_a">
+      <div class="short_new_left">
+        <img src="{{ new.short_image.url }}" alt="">
+      </div>
+      <div class="short_new_right">
+        <div class="top"><h3>{{ new.short_title }}</h3></div>
+        <div class="bottom"><p>Опубликовано: <time>{{ new.date }}</time></p></div>
+      </div>
+    </a>
+  </section>
+{% endfor %}
