@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'temple.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 import os
-SERVER = True
+SERVER = False
 if SERVER:
     DATABASES = {
         'default': {
